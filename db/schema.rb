@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_03_16_221054) do
+ActiveRecord::Schema.define(version: 2021_03_18_055243) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -29,11 +29,12 @@ ActiveRecord::Schema.define(version: 2021_03_16_221054) do
   create_table "employeer_csvs", force: :cascade do |t|
     t.bigint "employer_id"
     t.string "columns"
-    t.string "amount_position"
-    t.string "date_earning_position"
-    t.string "external_id_position"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "field_name"
+    t.string "field_earnig_type"
+    t.integer "field_position"
+    t.string "field_format"
     t.index ["employer_id"], name: "index_employeer_csvs_on_employer_id"
   end
 

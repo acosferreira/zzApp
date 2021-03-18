@@ -47,3 +47,10 @@ netAmount (float)
 
 Example CSV string:
 employee,earningDate,netAmount\nABC123,2020-12-14,800.00
+
+
+
+####################
+TODO
+1- format values
+2- exclude header
