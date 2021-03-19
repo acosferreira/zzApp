@@ -1,7 +1,8 @@
 class EmployerCsvService
     attr_accessor :employer_id, :csv_fields
-   
-    def process_csv(file)
+    
+    def process_csv(csv_file)
+      file = CSV.foreach(csv_file, {headers: true})
       earnings = []
       
       file.each do |row|

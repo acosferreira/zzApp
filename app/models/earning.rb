@@ -6,6 +6,12 @@ class Earning < ApplicationRecord
 
   before_validation :find_employee_id
 
+  def load_earnings(file)
+  	service = EmployerCsvService.new
+	    service.employer_id = self.employer_id
+	    service.csv_fields = EmployerCsvLayout.where(employer_id: self.employer_id)
+	    earnings = service.process_csv(file)
+	end
   private
 
   def find_employee_id

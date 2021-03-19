@@ -26,7 +26,16 @@ ActiveRecord::Schema.define(version: 2021_03_18_055243) do
     t.index ["employer_id"], name: "index_earnings_on_employer_id"
   end
 
-  create_table "employeer_csvs", force: :cascade do |t|
+  create_table "employees", force: :cascade do |t|
+    t.string "name"
+    t.string "external_ref"
+    t.bigint "employer_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["employer_id"], name: "index_employees_on_employer_id"
+  end
+
+  create_table "employer_csv_layouts", force: :cascade do |t|
     t.bigint "employer_id"
     t.string "columns"
     t.datetime "created_at", null: false
@@ -35,16 +44,7 @@ ActiveRecord::Schema.define(version: 2021_03_18_055243) do
     t.string "field_earnig_type"
     t.integer "field_position"
     t.string "field_format"
-    t.index ["employer_id"], name: "index_employeer_csvs_on_employer_id"
-  end
-
-  create_table "employees", force: :cascade do |t|
-    t.string "name"
-    t.string "external_ref"
-    t.bigint "employer_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["employer_id"], name: "index_employees_on_employer_id"
+    t.index ["employer_id"], name: "index_employer_csv_layouts_on_employer_id"
   end
 
   create_table "employers", force: :cascade do |t|
@@ -56,6 +56,6 @@ ActiveRecord::Schema.define(version: 2021_03_18_055243) do
 
   add_foreign_key "earnings", "employees"
   add_foreign_key "earnings", "employers"
-  add_foreign_key "employeer_csvs", "employers"
   add_foreign_key "employees", "employers"
+  add_foreign_key "employer_csv_layouts", "employers"
 end

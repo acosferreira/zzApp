@@ -1,7 +1,7 @@
 
 FactoryBot.define do 
 	
-	factory :employeer_csv do 
+	factory :employer_csv_layout do 
 		trait :external_ref_acme do
 			field_name 'EmployeeId'
 			field_earnig_type 'external_ref'

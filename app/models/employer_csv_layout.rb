@@ -1,4 +1,4 @@
-class EmployeerCsv < ApplicationRecord
+class EmployerCsvLayout < ApplicationRecord
   belongs_to :employer
 
   def find_value(row)

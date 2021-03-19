@@ -1,7 +1,7 @@
 {
   "RSpec": {
     "coverage": {
-      "/Users/acosferreira/Documents/zzApp/app/models/employeer_csv.rb": {
+      "/Users/acosferreira/Documents/zzApp/app/models/employer_csv_layout.rb": {
         "lines": [
           1,
           1,
@@ -85,10 +85,6 @@
           null,
           1,
           2,
-          2,
-          2,
-          2,
-          2,
           null,
           null,
           null
@@ -103,35 +99,6 @@
           null
         ]
       },
-      "/Users/acosferreira/Documents/zzApp/app/services/employer_csv_service.rb": {
-        "lines": [
-          1,
-          1,
-          null,
-          1,
-          2,
-          null,
-          2,
-          101,
-          101,
-          null,
-          2,
-          null,
-          null,
-          1,
-          null,
-          1,
-          101,
-          101,
-          101,
-          303,
-          303,
-          null,
-          101,
-          null,
-          null
-        ]
-      },
       "/Users/acosferreira/Documents/zzApp/app/models/earning.rb": {
         "lines": [
           1,
@@ -143,14 +110,50 @@
           1,
           null,
           1,
+          2,
+          2,
+          2,
+          2,
+          null,
+          1,
           null,
           1,
           101,
           null,
           null
         ]
+      },
+      "/Users/acosferreira/Documents/zzApp/app/services/employer_csv_service.rb": {
+        "lines": [
+          1,
+          1,
+          null,
+          1,
+          2,
+          2,
+          null,
+          2,
+          101,
+          101,
+          null,
+          2,
+          null,
+          null,
+          1,
+          null,
+          1,
+          101,
+          101,
+          101,
+          303,
+          303,
+          null,
+          101,
+          null,
+          null
+        ]
       }
     },
-    "timestamp": 1616136930
+    "timestamp": 1616138919
   }
 }

@@ -14,7 +14,7 @@
       <img src="./assets/0.12.3/loading.gif" alt="loading"/>
     </div>
     <div id="wrapper" class="hide">
-      <div class="timestamp">Generated <abbr class="timeago" title="2021-03-18T23:55:30-07:00">2021-03-18T23:55:30-07:00</abbr></div>
+      <div class="timestamp">Generated <abbr class="timeago" title="2021-03-19T00:28:39-07:00">2021-03-19T00:28:39-07:00</abbr></div>
       <ul class="group_tabs"></ul>
 
       <div id="content">
@@ -30,7 +30,7 @@
      covered at
      <span class="covered_strength">
        <span class="green">
-         51.88
+         50.55
        </span>
     </span> hits/line
     )
@@ -43,8 +43,8 @@
   </div>
 
   <div class="t-line-summary">
-    <b>74</b> relevant lines,
-    <span class="green"><b>74</b> lines covered</span> and
+    <b>76</b> relevant lines,
+    <span class="green"><b>76</b> lines covered</span> and
     <span class="red"><b>0</b> lines missed. </span>
     (<span class="green">
   100.0%
@@ -84,11 +84,11 @@
           <tr class="t-file">
             <td class="strong t-file__name"><a href="#b8974a4712013e882fe4181023920674528e5912" class="src_link" title="app/models/earning.rb">app/models/earning.rb</a></td>
             <td class="green strong cell--number t-file__coverage">100.00 %</td>
-            <td class="cell--number">14</td>
-            <td class="cell--number">8</td>
-            <td class="cell--number">8</td>
+            <td class="cell--number">20</td>
+            <td class="cell--number">13</td>
+            <td class="cell--number">13</td>
             <td class="cell--number">0</td>
-            <td class="cell--number">13.50</td>
+            <td class="cell--number">9.00</td>
             
           </tr>
         
@@ -104,7 +104,18 @@
           </tr>
         
           <tr class="t-file">
-            <td class="strong t-file__name"><a href="#d3cc356e979193006c527e9d0fb070a86d91b220" class="src_link" title="app/models/employeer_csv.rb">app/models/employeer_csv.rb</a></td>
+            <td class="strong t-file__name"><a href="#38013e35743a77a149c26057673797462cec9cf5" class="src_link" title="app/models/employer.rb">app/models/employer.rb</a></td>
+            <td class="green strong cell--number t-file__coverage">100.00 %</td>
+            <td class="cell--number">13</td>
+            <td class="cell--number">8</td>
+            <td class="cell--number">8</td>
+            <td class="cell--number">0</td>
+            <td class="cell--number">1.13</td>
+            
+          </tr>
+        
+          <tr class="t-file">
+            <td class="strong t-file__name"><a href="#191236cf8f287d0a8de3bcd6d3325eb76689fcc0" class="src_link" title="app/models/employer_csv_layout.rb">app/models/employer_csv_layout.rb</a></td>
             <td class="green strong cell--number t-file__coverage">100.00 %</td>
             <td class="cell--number">26</td>
             <td class="cell--number">13</td>
@@ -115,24 +126,13 @@
           </tr>
         
           <tr class="t-file">
-            <td class="strong t-file__name"><a href="#38013e35743a77a149c26057673797462cec9cf5" class="src_link" title="app/models/employer.rb">app/models/employer.rb</a></td>
-            <td class="green strong cell--number t-file__coverage">100.00 %</td>
-            <td class="cell--number">17</td>
-            <td class="cell--number">12</td>
-            <td class="cell--number">12</td>
-            <td class="cell--number">0</td>
-            <td class="cell--number">1.42</td>
-            
-          </tr>
-        
-          <tr class="t-file">
             <td class="strong t-file__name"><a href="#580e501ec34e4700777ff6cdb3331cd482afe62b" class="src_link" title="app/services/employer_csv_service.rb">app/services/employer_csv_service.rb</a></td>
             <td class="green strong cell--number t-file__coverage">100.00 %</td>
-            <td class="cell--number">25</td>
-            <td class="cell--number">16</td>
-            <td class="cell--number">16</td>
+            <td class="cell--number">26</td>
+            <td class="cell--number">17</td>
+            <td class="cell--number">17</td>
             <td class="cell--number">0</td>
-            <td class="cell--number">76.44</td>
+            <td class="cell--number">72.06</td>
             
           </tr>
         
@@ -242,8 +242,8 @@
     
 
     <div class="t-line-summary">
-      <b>8</b> relevant lines.
-      <span class="green"><b>8</b> lines covered</span> and
+      <b>13</b> relevant lines.
+      <span class="green"><b>13</b> lines covered</span> and
       <span class="red"><b>0</b> lines missed.</span>
     </div>
 
@@ -349,12 +349,78 @@
 
             
 
+            <code class="ruby">  def load_earnings(file)</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="2" data-linenumber="10">
+            <span class="hits">2</span>
+            
+
+            
+
+            <code class="ruby">  	service = EmployerCsvService.new</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="2" data-linenumber="11">
+            <span class="hits">2</span>
+            
+
+            
+
+            <code class="ruby">	    service.employer_id = self.employer_id</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="2" data-linenumber="12">
+            <span class="hits">2</span>
+            
+
+            
+
+            <code class="ruby">	    service.csv_fields = EmployerCsvLayout.where(employer_id: self.employer_id)</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="2" data-linenumber="13">
+            <span class="hits">2</span>
+            
+
+            
+
+            <code class="ruby">	    earnings = service.process_csv(file)</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="14">
+            
+            
+
+            
+
+            <code class="ruby">	end</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="15">
+            <span class="hits">1</span>
+            
+
+            
+
             <code class="ruby">  private</code>
           </li>
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="10">
+          <li class="never" data-hits="" data-linenumber="16">
             
             
 
@@ -365,7 +431,7 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="1" data-linenumber="11">
+          <li class="covered" data-hits="1" data-linenumber="17">
             <span class="hits">1</span>
             
 
@@ -376,7 +442,7 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="101" data-linenumber="12">
+          <li class="covered" data-hits="101" data-linenumber="18">
             <span class="hits">101</span>
             
 
@@ -387,7 +453,7 @@
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="13">
+          <li class="never" data-hits="" data-linenumber="19">
             
             
 
@@ -398,7 +464,7 @@
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="14">
+          <li class="never" data-hits="" data-linenumber="20">
             
             
 
@@ -499,9 +565,183 @@
 </div>
 
       
-        <div class="source_table" id="d3cc356e979193006c527e9d0fb070a86d91b220">
+        <div class="source_table" id="38013e35743a77a149c26057673797462cec9cf5">
   <div class="header">
-    <h3>app/models/employeer_csv.rb</h3>
+    <h3>app/models/employer.rb</h3>
+    <h4>
+      <span class="green">
+  100.0%
+</span>
+
+      lines covered
+    </h4>
+
+    
+
+    <div class="t-line-summary">
+      <b>8</b> relevant lines.
+      <span class="green"><b>8</b> lines covered</span> and
+      <span class="red"><b>0</b> lines missed.</span>
+    </div>
+
+    
+
+  </div>
+
+  <pre>
+    <ol>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="1">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">require &#39;csv&#39;</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="2">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">class Employer &lt; ApplicationRecord</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="3">
+            
+            
+
+            
+
+            <code class="ruby"></code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="4">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">	has_one :employer_csv_layout</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="5">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">	has_many :emplyees</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="6">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">	has_many :earnings</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="7">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">	validates :name,  presence: true</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="8">
+            
+            
+
+            
+
+            <code class="ruby"></code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="9">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">	def create_earnings(file)</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="2" data-linenumber="10">
+            <span class="hits">2</span>
+            
+
+            
+
+            <code class="ruby">		self.earnings.new.load_earnings(file)</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="11">
+            
+            
+
+            
+
+            <code class="ruby">	end</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="12">
+            
+            
+
+            
+
+            <code class="ruby"></code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="13">
+            
+            
+
+            
+
+            <code class="ruby">end</code>
+          </li>
+        </div>
+      
+    </ol>
+  </pre>
+</div>
+
+      
+        <div class="source_table" id="191236cf8f287d0a8de3bcd6d3325eb76689fcc0">
+  <div class="header">
+    <h3>app/models/employer_csv_layout.rb</h3>
     <h4>
       <span class="green">
   100.0%
@@ -532,7 +772,7 @@
 
             
 
-            <code class="ruby">class EmployeerCsv &lt; ApplicationRecord</code>
+            <code class="ruby">class EmployerCsvLayout &lt; ApplicationRecord</code>
           </li>
         </div>
       
@@ -816,224 +1056,6 @@
 </div>
 
       
-        <div class="source_table" id="38013e35743a77a149c26057673797462cec9cf5">
-  <div class="header">
-    <h3>app/models/employer.rb</h3>
-    <h4>
-      <span class="green">
-  100.0%
-</span>
-
-      lines covered
-    </h4>
-
-    
-
-    <div class="t-line-summary">
-      <b>12</b> relevant lines.
-      <span class="green"><b>12</b> lines covered</span> and
-      <span class="red"><b>0</b> lines missed.</span>
-    </div>
-
-    
-
-  </div>
-
-  <pre>
-    <ol>
-      
-        <div>
-          <li class="covered" data-hits="1" data-linenumber="1">
-            <span class="hits">1</span>
-            
-
-            
-
-            <code class="ruby">require &#39;csv&#39;</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="covered" data-hits="1" data-linenumber="2">
-            <span class="hits">1</span>
-            
-
-            
-
-            <code class="ruby">class Employer &lt; ApplicationRecord</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="never" data-hits="" data-linenumber="3">
-            
-            
-
-            
-
-            <code class="ruby"></code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="covered" data-hits="1" data-linenumber="4">
-            <span class="hits">1</span>
-            
-
-            
-
-            <code class="ruby">	has_one :employer_csv</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="covered" data-hits="1" data-linenumber="5">
-            <span class="hits">1</span>
-            
-
-            
-
-            <code class="ruby">	has_many :emplyees</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="covered" data-hits="1" data-linenumber="6">
-            <span class="hits">1</span>
-            
-
-            
-
-            <code class="ruby">	has_many :earnings</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="covered" data-hits="1" data-linenumber="7">
-            <span class="hits">1</span>
-            
-
-            
-
-            <code class="ruby">	validates :name,  presence: true</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="never" data-hits="" data-linenumber="8">
-            
-            
-
-            
-
-            <code class="ruby"></code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="covered" data-hits="1" data-linenumber="9">
-            <span class="hits">1</span>
-            
-
-            
-
-            <code class="ruby">	def load_earnings(file)</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="covered" data-hits="2" data-linenumber="10">
-            <span class="hits">2</span>
-            
-
-            
-
-            <code class="ruby">		file = CSV.foreach(file, {headers: true})</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="covered" data-hits="2" data-linenumber="11">
-            <span class="hits">2</span>
-            
-
-            
-
-            <code class="ruby">		service = EmployerCsvService.new</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="covered" data-hits="2" data-linenumber="12">
-            <span class="hits">2</span>
-            
-
-            
-
-            <code class="ruby">	    service.employer_id = self.id</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="covered" data-hits="2" data-linenumber="13">
-            <span class="hits">2</span>
-            
-
-            
-
-            <code class="ruby">	    service.csv_fields = EmployeerCsv.where(employer_id: self.id)</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="covered" data-hits="2" data-linenumber="14">
-            <span class="hits">2</span>
-            
-
-            
-
-            <code class="ruby">	    earnings = service.process_csv(file)</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="never" data-hits="" data-linenumber="15">
-            
-            
-
-            
-
-            <code class="ruby">	end</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="never" data-hits="" data-linenumber="16">
-            
-            
-
-            
-
-            <code class="ruby"></code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="never" data-hits="" data-linenumber="17">
-            
-            
-
-            
-
-            <code class="ruby">end</code>
-          </li>
-        </div>
-      
-    </ol>
-  </pre>
-</div>
-
-      
         <div class="source_table" id="580e501ec34e4700777ff6cdb3331cd482afe62b">
   <div class="header">
     <h3>app/services/employer_csv_service.rb</h3>
@@ -1048,8 +1070,8 @@
     
 
     <div class="t-line-summary">
-      <b>16</b> relevant lines.
-      <span class="green"><b>16</b> lines covered</span> and
+      <b>17</b> relevant lines.
+      <span class="green"><b>17</b> lines covered</span> and
       <span class="red"><b>0</b> lines missed.</span>
     </div>
 
@@ -1089,7 +1111,7 @@
 
             
 
-            <code class="ruby">   </code>
+            <code class="ruby">    </code>
           </li>
         </div>
       
@@ -1100,7 +1122,7 @@
 
             
 
-            <code class="ruby">    def process_csv(file)</code>
+            <code class="ruby">    def process_csv(csv_file)</code>
           </li>
         </div>
       
@@ -1111,12 +1133,23 @@
 
             
 
+            <code class="ruby">      file = CSV.foreach(csv_file, {headers: true})</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="2" data-linenumber="6">
+            <span class="hits">2</span>
+            
+
+            
+
             <code class="ruby">      earnings = []</code>
           </li>
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="6">
+          <li class="never" data-hits="" data-linenumber="7">
             
             
 
@@ -1127,7 +1160,7 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="2" data-linenumber="7">
+          <li class="covered" data-hits="2" data-linenumber="8">
             <span class="hits">2</span>
             
 
@@ -1138,7 +1171,7 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="101" data-linenumber="8">
+          <li class="covered" data-hits="101" data-linenumber="9">
             <span class="hits">101</span>
             
 
@@ -1149,7 +1182,7 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="101" data-linenumber="9">
+          <li class="covered" data-hits="101" data-linenumber="10">
             <span class="hits">101</span>
             
 
@@ -1160,7 +1193,7 @@
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="10">
+          <li class="never" data-hits="" data-linenumber="11">
             
             
 
@@ -1171,7 +1204,7 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="2" data-linenumber="11">
+          <li class="covered" data-hits="2" data-linenumber="12">
             <span class="hits">2</span>
             
 
@@ -1182,7 +1215,7 @@
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="12">
+          <li class="never" data-hits="" data-linenumber="13">
             
             
 
@@ -1193,7 +1226,7 @@
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="13">
+          <li class="never" data-hits="" data-linenumber="14">
             
             
 
@@ -1204,7 +1237,7 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="1" data-linenumber="14">
+          <li class="covered" data-hits="1" data-linenumber="15">
             <span class="hits">1</span>
             
 
@@ -1215,7 +1248,7 @@
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="15">
+          <li class="never" data-hits="" data-linenumber="16">
             
             
 
@@ -1226,7 +1259,7 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="1" data-linenumber="16">
+          <li class="covered" data-hits="1" data-linenumber="17">
             <span class="hits">1</span>
             
 
@@ -1237,7 +1270,7 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="101" data-linenumber="17">
+          <li class="covered" data-hits="101" data-linenumber="18">
             <span class="hits">101</span>
             
 
@@ -1248,7 +1281,7 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="101" data-linenumber="18">
+          <li class="covered" data-hits="101" data-linenumber="19">
             <span class="hits">101</span>
             
 
@@ -1259,7 +1292,7 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="101" data-linenumber="19">
+          <li class="covered" data-hits="101" data-linenumber="20">
             <span class="hits">101</span>
             
 
@@ -1270,7 +1303,7 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="303" data-linenumber="20">
+          <li class="covered" data-hits="303" data-linenumber="21">
             <span class="hits">303</span>
             
 
@@ -1281,7 +1314,7 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="303" data-linenumber="21">
+          <li class="covered" data-hits="303" data-linenumber="22">
             <span class="hits">303</span>
             
 
@@ -1292,7 +1325,7 @@
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="22">
+          <li class="never" data-hits="" data-linenumber="23">
             
             
 
@@ -1303,7 +1336,7 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="101" data-linenumber="23">
+          <li class="covered" data-hits="101" data-linenumber="24">
             <span class="hits">101</span>
             
 
@@ -1314,7 +1347,7 @@
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="24">
+          <li class="never" data-hits="" data-linenumber="25">
             
             
 
@@ -1325,7 +1358,7 @@
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="25">
+          <li class="never" data-hits="" data-linenumber="26">
             
             
 
@@ -1428,7 +1461,7 @@
 
             
 
-            <code class="ruby">	subject {employer.load_earnings(file)}</code>
+            <code class="ruby">	subject {employer.create_earnings(file)}</code>
           </li>
         </div>
       
@@ -1461,7 +1494,7 @@
 
             
 
-            <code class="ruby">	let(:employeer_csv) { create_list(:employeer_csv, 3, :external_ref_acme, employer: employer )}</code>
+            <code class="ruby">	let(:employer_csv_layout) { create_list(:employer_csv_layout, 3, :external_ref_acme, employer: employer )}</code>
           </li>
         </div>
       
@@ -1538,7 +1571,7 @@
 
             
 
-            <code class="ruby">			 expect(employeer_csv).to_not eq &#39;&#39;</code>
+            <code class="ruby">			 expect(employer_csv_layout).to_not eq &#39;&#39;</code>
           </li>
         </div>
       
@@ -1648,7 +1681,7 @@
 
             
 
-            <code class="ruby">			 expect(employeer_csv).to_not eq &#39;&#39;</code>
+            <code class="ruby">			 expect(employer_csv_layout).to_not eq &#39;&#39;</code>
           </li>
         </div>
       
