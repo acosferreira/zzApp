@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class EmployerCsvService
   attr_accessor :employer_id, :csv_fields
 

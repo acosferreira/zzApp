@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 FactoryBot.define do
   factory :employer_csv_layout do
     trait :external_ref_acme do

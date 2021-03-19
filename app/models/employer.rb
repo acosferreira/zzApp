@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'csv'
 class Employer < ApplicationRecord
   has_one :employer_csv_layout

@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class Earning < ApplicationRecord
   attr_accessor :external_ref
 

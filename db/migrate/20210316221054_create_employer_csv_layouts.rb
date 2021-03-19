@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class CreateEmployerCsvLayouts < ActiveRecord::Migration[5.2]
   def change
     create_table :employer_csv_layouts do |t|
