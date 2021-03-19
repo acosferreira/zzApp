@@ -8,13 +8,18 @@ class Earning < ApplicationRecord
 
   def load_earnings(file)
   	service = EmployerCsvService.new
-	    service.employer_id = self.employer_id
-	    service.csv_fields = EmployerCsvLayout.where(employer_id: self.employer_id)
-	    earnings = service.process_csv(file)
+    service.employer_id = self.employer_id
+    service.csv_fields = EmployerCsvLayout.where(employer_id: self.employer_id)
+    earnings = service.process_csv(file)
+  rescue StandardError => e
+  	puts e.message
 	end
+
   private
 
   def find_employee_id
   	self.employee_id = Employee.find_by(external_ref: external_ref).id
+  rescue StandardError =>e
+  	puts e.message
   end
 end

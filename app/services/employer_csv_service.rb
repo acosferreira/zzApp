@@ -6,10 +6,14 @@ class EmployerCsvService
       earnings = []
       
       file.each do |row|
-         earning_values = parse_to_earning(row)
-         earnings << Earning.new(earning_values)
+        begin
+          earning_values = parse_to_earning(row)
+          earnings << Earning.new(earning_values)
+        rescue e
+          errors.add(row, e)
+        end
       end
-      Earning.import!(earnings)
+      Earning.import(earnings)
     end
 
     private

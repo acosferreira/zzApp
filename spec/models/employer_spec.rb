@@ -8,7 +8,7 @@ RSpec.describe Employer, type: :model do
 	let(:employee) {create(:employee, :ana, employer: employer)}
 	let(:employer_csv_layout) { create_list(:employer_csv_layout, 3, :external_ref_acme, employer: employer )}
 	  	
-  	context 'when type is external_ref' do
+  	context 'simple file' do
   		let(:file){"spec/fixtures/AcmeCo.csv"}
 	
   		it 'employer have earnings' do
@@ -18,13 +18,31 @@ RSpec.describe Employer, type: :model do
 		end
   	end
 
-  	context 'when type is external_ref' do
+  	context 'long file' do
   		let(:file){"spec/fixtures/AcmeCoFull.csv"}
 	
   		it 'employer have earnings' do
 			 expect(employee.name).to eq 'test'
 			 expect(employer_csv_layout).to_not eq ''
 			 expect(subject.ids.size).to eq 100
+		end
+  	end
+
+  	context 'file contains error' do
+  		let(:file){"spec/fixtures/BetaCo.csv"}
+	
+  		it 'employer have earnings' do
+			 expect(employee.name).to eq 'test'
+			 expect(employer_csv_layout).to_not eq ''
+			 expect(subject.ids.size).to eq 1
+			 expect(subject.failed_instances.size).to eq 2
+		end
+  	end
+
+  	context 'File error' do
+  		let(:file){"spec/fixtures/123.csv"}
+  		it 'employer have earnings' do
+  			expect(subject).to eq nil
 		end
   	end
   end  
