@@ -43,6 +43,7 @@ group :development, :test do
   gem 'shoulda-matchers', require: false
   gem 'rails-controller-testing'
   gem 'simplecov'
+  gem 'factory_bot_rails'
 end
 
 group :development do

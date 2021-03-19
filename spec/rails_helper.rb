@@ -22,6 +22,7 @@ require 'rspec/rails'
 #
 require 'shoulda/matchers'
 require 'simplecov'
+require 'support/factory_bot'
 SimpleCov.start
 Dir[Rails.root.join('spec', 'support', '**', '*.rb')].sort.each { |f| require f }
 
