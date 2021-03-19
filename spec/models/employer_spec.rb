@@ -35,7 +35,7 @@ RSpec.describe Employer, type: :model do
     context 'File error' do
       let(:file) { 'spec/fixtures/123.csv' }
       it 'employer have earnings' do
-        expect(subject).to eq nil
+        expect(subject).to eq 'No such file or directory @ rb_sysopen - spec/fixtures/123.csv'
       end
     end
   end
