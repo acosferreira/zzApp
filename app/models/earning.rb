@@ -12,7 +12,7 @@ class Earning < ApplicationRecord
     service = EmployerCsvService.new
     service.employer_id = employer_id
     service.csv_fields = EmployerCsvLayout.where(employer_id: employer_id)
-    earnings = service.process_csv(file)
+    service.process_csv(file)
   rescue StandardError => e
     e.message
   end
