@@ -16,7 +16,7 @@ class EmployerCsvLayout < ApplicationRecord
       when 'check_date'
         parse_date(raw_value, field_format)
       when 'amount'
-        raw_value.gsub(field_format, '').to_f
+        parse_amount(raw_value, field_format)
       else
         raw_value
       end
@@ -24,5 +24,9 @@ class EmployerCsvLayout < ApplicationRecord
 
   def parse_date(value, format)
     format.blank? ? Date.strptime(value) : Date.strptime(value, format)
+  end
+
+  def parse_amount(value, format)
+    value.gsub(field_format, '').to_f
   end
 end
