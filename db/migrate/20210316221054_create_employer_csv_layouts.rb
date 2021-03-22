@@ -1,6 +1,8 @@
-class CreateEmployeerCsvs < ActiveRecord::Migration[5.2]
+# frozen_string_literal: true
+
+class CreateEmployerCsvLayouts < ActiveRecord::Migration[5.2]
   def change
-    create_table :employeer_csvs do |t|
+    create_table :employer_csv_layouts do |t|
       t.references :employer, foreign_key: true
       t.string :columns
       t.string :amount_position

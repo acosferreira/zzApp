@@ -28,7 +28,7 @@ Earning model:
 employee_id
 employer_id
 earning_date: date
-amount: decimat
+amount: decimal
 
 AcmeCo is giving us their earnings CSV in the following format
 
@@ -47,3 +47,18 @@ netAmount (float)
 
 Example CSV string:
 employee,earningDate,netAmount\nABC123,2020-12-14,800.00
+
+
+
+####################
+TODO
+1- format values
+2- exclude header
+
+
+# Example of EmployerCSVField
+# id, employee_id, position, field_name, type, format
+# 1, 1,"EmployeeID", 0,"external_ref",""
+# 2, 1,"DateOfPayment", 1,"check_date", "MM/DD/YYYY"
+# 3, 1,"Earning", 2,"amount","", "$"
+# 4, 1,"Bonus", 3,"custom",""

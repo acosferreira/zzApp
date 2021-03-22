@@ -1,7 +1,7 @@
-require 'csv'
+# frozen_string_literal: true
+
 class Employee < ApplicationRecord
   belongs_to :employer
-
-  validates :name,  presence: true
-  
+  has_many :earnings
+  validates :name, presence: true
 end

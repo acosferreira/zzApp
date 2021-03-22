@@ -1,13 +1,13 @@
-require 'CSV'
+# frozen_string_literal: true
+
+require 'csv'
 class Employer < ApplicationRecord
+  has_one :employer_csv_layout
+  has_many :emplyees
+  has_many :earnings
+  validates :name, presence: true
 
-	has_one :employer_csv
-	validates :name,  presence: true
-
-	def self.get_csv_layout
-		data = CSV.read("spec/fixtures/AcmeCo.csv")
-		Employer.employer_csv.create(Employer: employer, columns: data[0])
-	end
-
-
+  def create_earnings(file)
+    earnings.new.load_earnings(file)
+  end
 end

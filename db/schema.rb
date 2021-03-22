@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 # This file is auto-generated from the current state of the database. Instead
 # of editing this file, please use the migrations feature of Active Record to
 # incrementally modify your database, and then regenerate this schema definition.
@@ -10,51 +12,51 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_03_16_221054) do
-
+ActiveRecord::Schema.define(version: 20_210_318_055_243) do
   # These are extensions that must be enabled in order to support this database
-  enable_extension "plpgsql"
+  enable_extension 'plpgsql'
 
-  create_table "earnings", force: :cascade do |t|
-    t.bigint "employer_id"
-    t.bigint "employee_id"
-    t.date "earning_date"
-    t.decimal "amount"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["employee_id"], name: "index_earnings_on_employee_id"
-    t.index ["employer_id"], name: "index_earnings_on_employer_id"
+  create_table 'earnings', force: :cascade do |t|
+    t.bigint 'employer_id'
+    t.bigint 'employee_id'
+    t.date 'earning_date'
+    t.decimal 'amount'
+    t.datetime 'created_at', null: false
+    t.datetime 'updated_at', null: false
+    t.index ['employee_id'], name: 'index_earnings_on_employee_id'
+    t.index ['employer_id'], name: 'index_earnings_on_employer_id'
   end
 
-  create_table "employeer_csvs", force: :cascade do |t|
-    t.bigint "employer_id"
-    t.string "columns"
-    t.string "amount_position"
-    t.string "date_earning_position"
-    t.string "external_id_position"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["employer_id"], name: "index_employeer_csvs_on_employer_id"
+  create_table 'employees', force: :cascade do |t|
+    t.string 'name'
+    t.string 'external_ref'
+    t.bigint 'employer_id'
+    t.datetime 'created_at', null: false
+    t.datetime 'updated_at', null: false
+    t.index ['employer_id'], name: 'index_employees_on_employer_id'
   end
 
-  create_table "employees", force: :cascade do |t|
-    t.string "name"
-    t.string "external_ref"
-    t.bigint "employer_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["employer_id"], name: "index_employees_on_employer_id"
+  create_table 'employer_csv_layouts', force: :cascade do |t|
+    t.bigint 'employer_id'
+    t.string 'columns'
+    t.datetime 'created_at', null: false
+    t.datetime 'updated_at', null: false
+    t.string 'field_name'
+    t.string 'field_earnig_type'
+    t.integer 'field_position'
+    t.string 'field_format'
+    t.index ['employer_id'], name: 'index_employer_csv_layouts_on_employer_id'
   end
 
-  create_table "employers", force: :cascade do |t|
-    t.string "name"
-    t.string "string"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+  create_table 'employers', force: :cascade do |t|
+    t.string 'name'
+    t.string 'string'
+    t.datetime 'created_at', null: false
+    t.datetime 'updated_at', null: false
   end
 
-  add_foreign_key "earnings", "employees"
-  add_foreign_key "earnings", "employers"
-  add_foreign_key "employeer_csvs", "employers"
-  add_foreign_key "employees", "employers"
+  add_foreign_key 'earnings', 'employees'
+  add_foreign_key 'earnings', 'employers'
+  add_foreign_key 'employees', 'employers'
+  add_foreign_key 'employer_csv_layouts', 'employers'
 end
